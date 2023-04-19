@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "db_iec_new",
+    "password": "G6VVjIV0oa0!",
+    "database": "db_iec_new",
+    "host": "db_iec_new.vpshost2003.mysql.dbaas.com.br",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
