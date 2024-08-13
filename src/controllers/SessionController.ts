@@ -48,9 +48,7 @@ export const SessionController = {
             subject: newUser.id,
             expiresIn: '1d'
         })
-        } catch(error) {
-        console.log(error)
-        }
+        
 
         /*  const [, affectRows] = await connection.query(`
              INSERT INTO users VALUES ('${uuidV4()}', '${name}', '${email}', '${passwordHashed}', '${permission}', NOW(), NULL)
@@ -63,6 +61,10 @@ export const SessionController = {
             newUser,
             roles
         })
+
+            } catch(error) {
+        console.log(error)
+        }
     }
 
 
