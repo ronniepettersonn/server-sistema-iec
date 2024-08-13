@@ -26,6 +26,7 @@ export const SessionController = {
 
         if (!newUser) {
             response.error = [{ error: 'User not found' }]
+            console.log(newUser, 'nao achou usuario')
             return res.status(400).json(response)
         }
 
@@ -67,6 +68,6 @@ export const SessionController = {
         }
     }
 
-
+    
 
 }
