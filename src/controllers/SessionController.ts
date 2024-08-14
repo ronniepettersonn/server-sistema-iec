@@ -2,7 +2,7 @@ import { connection } from "../db/connection";
 import { QueryTypes } from 'sequelize'
 import { v4 as uuidV4 } from 'uuid'
 import { sign } from 'jsonwebtoken'
-import { compare, hash, } from 'bcryptjs'
+import { compare, hash } from 'bcryptjs'
 
 const responseModel = {
     success: false,
@@ -24,13 +24,16 @@ export const SessionController = {
 
         const [newUser] = user as any
 
+        
         if (!newUser) {
             response.error = [{ error: 'User not found' }]
             console.log(newUser, 'nao achou usuario')
             return res.status(400).json(response)
         }
-
+        
         const matchPassword = await compare(password, newUser.password)
+        const passwordHashed = await hash(password,8)
+         console.log(passwordHashed, newUser.password, 'AQUIII')
 
         if (!matchPassword) {
             response.error = [{ error: 'Incorrect user or email' }]
